@@ -14,7 +14,7 @@ export default function Tabs(props) {
     return (
         <div className="inline-flex">
             {props.tabs && props.tabs.map((value, index) => (
-                <Tab onClick={() => props.onClick(value)} text={value} current={props.current == value} />
+                <Tab key={index} onClick={() => props.onClick(value)} text={value} current={props.current == value} />
             ))}
         </div>
     )
