@@ -52,7 +52,7 @@ export default function PatientRecords(){
                         {  
                             // loop through the object
                             Object.keys(patientDetails).map((key)=>{
-                                return <Field name={key} value={patientDetails[key]}/>
+                                return <Field key={key} name={key} value={patientDetails[key]}/>
                             })
                         }
                     </div>

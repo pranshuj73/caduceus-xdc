@@ -66,16 +66,16 @@ export default function Table(props) {
             <table className="w-full text-sm text-left text-gray-500 mt-4">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
-                        {props.head && props.head.map((headField) => (
-                            <th scope="col" className="py-3 px-6">
+                        {props.head && props.head.map((headField, index) => (
+                            <th key={index} scope="col" className="py-3 px-6">
                             {headField}
                             </th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data && props.data.map((item) => (
-                        <TableRow patientName={item.patientName} date={item.date} time={item.time} appointmentType={item.appointmentType} likelyDiagnosis={item.likelyDiagnosis} onClick={props.onClick} />
+                    {props.data && props.data.map((item, index) => (
+                        <TableRow key={index} patientName={item.patientName} date={item.date} time={item.time} appointmentType={item.appointmentType} likelyDiagnosis={item.likelyDiagnosis} onClick={props.onClick} />
                     ))}
                 </tbody>
             </table>

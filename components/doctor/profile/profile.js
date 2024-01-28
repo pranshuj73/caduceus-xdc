@@ -21,7 +21,7 @@ export default function DoctorProfile() {
                         {
                             // loop through the object
                             Object.keys(doctorDetails).map((key) => {
-                                return <Field name={key} value={doctorDetails[key]} />
+                                return <Field key={key} name={key} value={doctorDetails[key]} />
                             })
                         }
                     </div>
