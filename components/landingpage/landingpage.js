@@ -1,5 +1,6 @@
 import { useWeb3 } from "@3rdweb/hooks"
 import { useRouter } from "next/router"
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import { getContract, loadWeb3 } from "../abi"
 import Field from "../utils/field"
@@ -11,7 +12,7 @@ function Card(props) {
       <p className="font-medium text-gray-500 uppercase">
         {props.type}
       </p>
-      <img src={props.image} className="h-40 w-40 mx-auto" />
+      <Image src={props.image} className="h-40 w-40 mx-auto" alt="card image" />
       <button onClick={props.onClick} className="w-full px-4 py-2 mt-10 tracking-wide text-white capitalize transition-colors duration-300 transform bg-teal-600 rounded-md hover:bg-teal-500 focus:outline-none focus:bg-teal-500 focus:ring focus:ring-teal-300 focus:ring-opacity-80">
         Continue
       </button>
@@ -81,7 +82,7 @@ export default function LandingPage() {
   return (
     <div className="bg-gray-100 flex justify-center items-center h-screen w-full">
       <div className="container px-6 py-8 mx-auto">
-        <img src="/assets/xdc-health-icon.svg" className="h-20 w-20 mx-auto" />
+        <Image src="/assets/xdc-health-icon.svg" className="h-20 w-20 mx-auto" alt="xdc health icon" />
         <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">
           EHR Caduceus
         </h1>
